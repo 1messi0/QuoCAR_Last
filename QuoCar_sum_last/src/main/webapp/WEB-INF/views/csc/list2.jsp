@@ -17,6 +17,8 @@
 /* 메뉴 스타일 */
 
 /* 게시판 스타일 */
+
+
 #table {
 	width: 100%;
 	border-collapse: collapse;
@@ -78,6 +80,7 @@
 
 #table td:nth-of-type(2) {
 	text-align: left;
+	text-size: 24px;
 	text-decoration: none;
 	font-weight: bold;
 	color: #333;
@@ -117,6 +120,8 @@ footer {
 	text-align: center; /* 텍스트 가운데 정렬 */
 	padding: 10px 0; /* 상하 여백 설정 */
 }
+
+
 
 </style>
 </head>

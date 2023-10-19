@@ -3,53 +3,59 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
+
 <!-- 메뉴목록 -->
+
+
 <style>
 /* 메뉴 스타일 */
+
 #cmenu {
-	border-radius: 10px;
-	margin: 20px 0;
-	padding: 15px;
-	text-align: center;
+    border-radius: 10px;
+    margin: 20px auto; /* 화면 중앙으로 이동시키기 위한 설정 */
+    padding: 15px;
+    text-align: center;
 }
 
 .menu-bar {
-	padding: 15px 0;
-	text-align: center;
+    padding: 15px 0;
+    text-align: left;
 }
 
 .menu-bar a {
-	text-decoration: none;
-	color: #333;
-	font-weight: bold; /* 텍스트를 볼드체로 설정 */
-	font-size: 25px;
-	padding: 15px 30px;
-	transition: transform 0.3s;
-	display: inline-block;
-	border-radius: 5px;
-	text-decoration: none;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 15px 30px;
+    transition: transform 0.3s;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
 }
 
 .menu-bar a::before {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background-color: #333;
-	transform: scaleX(0);
-	transform-origin: 0% 0%;
-	transition: transform 0.3s;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: 0% 0%;
+    transition: transform 0.3s;
+    background-color: #333;
 }
 
 .menu-bar a:hover {
-	transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .menu-bar a:hover::before {
-	transform: scaleX(1);
+    transform: scaleX(1);
 }
+
 </style>
 
 <table id="cmenu">
@@ -60,11 +66,3 @@
 		</c:forEach>
 	</tr>
 </table>
-
-
-
-
-
-
-
-
