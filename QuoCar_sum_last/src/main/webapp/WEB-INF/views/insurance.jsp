@@ -130,7 +130,8 @@
 <style>
 
 body {
-	flex-direction: row; /*수평 정렬*/
+    margin: 0;
+    padding: 0;
 }
 
 /* h3 {
@@ -312,11 +313,17 @@ button:hover {
 }
 
 .centered-image {
-	display: block; /* 이미지를 인라인 블록 요소로 변경 */
-	margin: 0 auto; /* 이미지와 텍스트 사이의 간격 조정 (원하는 값으로 변경) */
-	border-radius: 10px;
-	max-width: 30%;
-	text-align: center;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    max-width: 30%;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.centered-image:hover {
+    transform: scale(1.1); /* 이미지 확대 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
 }
 
 .centered-image img {
@@ -485,10 +492,6 @@ table tr td label:not(:last-child) {
 .font-img {
 	cursor: pointer;
 }
-
-/* 보험료 계산  */
-
-/* 보험 끝 */
 
 /* 스피너 애니메이션 스타일 */
 .loading-spinner {
