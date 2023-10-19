@@ -16,39 +16,60 @@
 
 /* 메뉴 스타일 */
 .menu-bar {
-  background-color: #f5f5f5; /* Background color */
-  color: #333; /* Text color */
-  border-bottom: 2px solid #ccc; /* Bottom border */
-  padding: 15px 0; /* Adjusted padding */
-  text-align: center; /* Center-align the text */
+  background-color: #fff; /* 배경 색상을 흰색으로 설정 */
+  color: #333; /* 텍스트 색상 */
+  padding: 15px 0; /* 패딩 조정 */
+  text-align: center; /* 텍스트 가운데 정렬 */
 }
 
 .menu-bar a {
   text-decoration: none;
   color: #333;
-  font-size: 16px; /* Text size */
-  padding: 10px 20px; /* Padding for a button-like look */
-  transition: background-color 0.3s;
-  border: 1px solid #ccc; /* Border */
-  border-radius: 5px; /* Slightly rounded corners */
-  margin: 10px; /* Spacing between menu items */
-  display: inline-block; /* Display items horizontally */
+  font-size: 18px; /* 텍스트 크기 더 크게 조정 */
+  padding: 15px 30px; /* 버튼 스타일 패딩 늘리기 */
+  transition: background-color 0.3s, color 0.3s; /* 호버 애니메이션 효과 추가 */
+  border: none; /* 버튼 테두리 제거 */
+  background: transparent; /* 배경 투명하게 설정 */
+  margin: 10px; /* 메뉴 항목 간격 */
+  display: inline-block;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.menu-bar a:hover {
-  background-color: #eee; /* Background color on hover */
+.menu-bar a::before {
+  content: ''; /* 가상 요소 추가 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0); /* 초기에 투명한 선 */
+  transition: background-color 0.3s; /* 선의 색상 애니메이션 추가 */
 }
+
+.menu-bar a::after {
+  content: ''; /* 가상 요소 추가 */
+  position: absolute;
+  bottom: -5px; /* 선과 버튼 간격 조정 */
+  left: 0;
+  width: 0;
+  height: 2px; /* 버튼 하단 선의 두께 설정 */
+  background-color: #333; /* 선의 색상 */
+  transition: width 0.3s; /* 선의 너비 애니메이션 추가 */
+}
+
 
 #cmenu {
   margin: 20px 0;
 }
 
 #cmenu td {
-  border-right: 1px solid #ccc; /* Right border */
+  border-right: none; /* 나머지 선 제거 */
 }
 
 #cmenu td:last-child {
-  border-right: none;
+  border-right: none; /* 나머지 선 제거 */
 }
 
 /* 기본 스타일  */
@@ -63,7 +84,6 @@
 #table th,
 #table td {
   padding: 15px;
-  border: 1px solid #ccc;
 }
 
 #table th:nth-of-type(1) {
@@ -89,7 +109,6 @@
 
 #table td:nth-of-type(2) {
   text-align: left;
-  font-weight: bold; /* 두 번째 열의 텍스트를 굵게 표시 */
 }
 
 #table th {
@@ -104,14 +123,15 @@
   margin-bottom: 20px;
 }
 
+/*
 #table tr:nth-child(even) {
-  background-color: #f0f0f0; /* 진한 회색 배경 색상 */
+  background-color: #f0f0f0; /* 진한 회색 배경 색상 
 }
 
 #table tr:hover {
-  background-color: #ddd; /* 마우스 오버 시 밝은 회색 배경 색상 */
+  background-color: #ddd; /* 마우스 오버 시 밝은 회색 배경 색상 
 }
-
+*/
 </style>
 
 <script></script>
@@ -119,16 +139,17 @@
 <body>
  <jsp:include page="/WEB-INF/views/include/header.jsp" />
 <main>
-   
-   <!--  고객센터 목록 -->
-   <%@include file="/WEB-INF/include/cmenu.jsp" %>
-   <br>
+     
   	<!-- 게시물 목록 -->
 	<table id="table">
 	<caption>
 	  <h2>${ csc_name  }</h2>
 	  <br>
 	  <br>
+	  
+	<!--  고객센터 목록 -->
+   <%@include file="/WEB-INF/include/cmenu.jsp" %>
+	  
 	</caption>
 	<tr>
 	  <th>번호</th>
